@@ -27,9 +27,9 @@ skills:
   huggingface-trending: { enabled: false, schedule: "30 9 * * *", model: "claude-sonnet-4-6", var: "" } # daily — curated trending HF models/datasets/spaces with "why notable" lines, momentum tags, and bucket clustering. Set var to one of {models, datasets, spaces} to scope.
 
   # --- Midday (12 PM UTC) ---
-  token-alert: { enabled: false, schedule: "0 12 * * *" }
-  token-movers: { enabled: false, schedule: "0 12 * * *" }
-  on-chain-monitor: { enabled: false, schedule: "0 12 * * *" }
+  token-alert: { enabled: true, schedule: "10 16" }
+  token-movers: { enabled: true, schedule: "6 9 14 17 20" }
+  on-chain-monitor: { enabled: true, schedule: "7 12 15 19 22" }
   defi-monitor: { enabled: false, schedule: "0 12 * * *" }
   treasury-info: { enabled: false, schedule: "0 12 * * *" }
   distribute-tokens: { enabled: false, schedule: "workflow_dispatch", var: "" } # on-demand — var: distribution list label
@@ -37,7 +37,7 @@ skills:
 
   monitor-polymarket: { enabled: false, schedule: "30 12 * * *", model: "claude-sonnet-4-6" } # monitor specific markets for 24h price moves and volume changes
   monitor-kalshi: { enabled: false, schedule: "0 13 * * *", model: "claude-sonnet-4-6" } # monitor Kalshi prediction markets for 24h price moves and volume
-  monitor-runners: { enabled: false, schedule: "0 12 * * *" }
+  monitor-runners: { enabled: true, schedule: "8 13 18" }
   token-pick: { enabled: false, schedule: "0 12 * * *" }
   token-report: { enabled: false, schedule: "30 12 * * *", model: "claude-sonnet-4-6" } # daily token price/volume from GeckoTerminal
   price-threshold-alert: { enabled: false, schedule: "*/30 * * * *", model: "claude-sonnet-4-6", var: "" } # every 30 minutes — fire on tracked-token ATH, ±20% 1h move, or operator-set target crossing (var=target_price,target_price2,...). Silent on normal runs. Set var=dry-run to skip notify.
@@ -73,7 +73,7 @@ skills:
   repo-scanner: { enabled: false, schedule: "0 15 * * 0", model: "claude-sonnet-4-6", var: "" } # catalog all GitHub repos — set var to username
 
   # --- Late afternoon (4 PM UTC) ---
-  skill-security-scan: { enabled: false, schedule: "0 16 * * 1" }
+  skill-security-scan: { enabled: true, schedule: "5 16 20 1" }
   code-health: { enabled: false, schedule: "0 16 * * *" }
   changelog: { enabled: false, schedule: "0 16 * * *" }
   external-feature: { enabled: false, schedule: "30 16 * * *", var: "" } # proactively enhance watched repos — set var to owner/repo or owner/repo#N
